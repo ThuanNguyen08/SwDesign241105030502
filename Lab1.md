@@ -37,12 +37,12 @@
 
 3. **Phân tích ca sử dụng Select Payment**
     - **Các lớp phân tích chính:** 
-        + **Model (PayrollModel)**:
+        + **Entity (PayrollModel)**:
             - Employee: Chứa các thuộc tính về nhân viên, bao gồm thông tin thanh toán.
             - PaymentMethod: Đại diện cho các phương thức thanh toán mà nhân viên có thể lựa chọn (nhận trực tiếp, gửi qua bưu điện, chuyển khoản).
-        + **View (PayrollView)**:
+        + **Boundary (PayrollView)**:
             - EmployeeView: Hiển thị cho nhân viên các lựa chọn về phương thức thanh toán.
-        + **Controller (PayrollController)**: 
+        + **Control (PayrollController)**: 
             - EmployeeController: Điều khiển quy trình chọn phương thức thanh toán và cập nhật thông tin thanh toán vào Model.
 
     - **Biểu đồ Sequence cho Select Payment**
@@ -79,14 +79,14 @@
 
 4. **Phân tích ca sử dụng Maintain Timecard**
     - Các lớp phân tích chính: 
-        + **Model (PayrollModel)**:
+        + **Entity (PayrollModel)**:
             - Employee: Lớp đại diện cho nhân viên, liên kết với lớp Timecard.
             - Timecard: Quản lý thông tin về thời gian làm việc và mã số dự án mà nhân viên đã làm.
 
-        + **View (PayrollView)**:
+        + **Boundary (PayrollView)**:
             - TimecardView: Hiển thị giao diện cho phép nhân viên nhập thời gian làm việc.
 
-        + **Controller (PayrollController)**:
+        + **Control (PayrollController)**:
             - TimecardController: Điều khiển quá trình tạo, cập nhật và nộp thẻ chấm công từ View đến Model.
 
     - **Biểu đồ Sequence cho Maintain Timecard**
@@ -141,7 +141,7 @@
 
 2. Phân tích Lớp
     - Các lớp chính
-        1. **Model (PayrollModel)**
+        1. **Entity (PayrollModel)**
             - **Employee:** Đại diện cho thông tin của nhân viên, bao gồm các thuộc tính như mã nhân viên, tên, và phương thức thanh toán.
                 + Thuộc tính:
                     - id: Mã định danh duy nhất cho mỗi nhân viên.
@@ -164,7 +164,7 @@
                 + Phương thức:
                     - getMethodDetails(): Trả về thông tin chi tiết của phương thức thanh toán.
 
-        2. **View (PayrollView)**
+        2. **Boundary (PayrollView)**
             - **EmployeeView:** Hiển thị giao diện để nhân viên lựa chọn phương thức thanh toán.
                 + Phương thức:
                     - displayPaymentOptions(methods: List<PaymentMethod>): Hiển thị danh sách phương thức thanh toán.
@@ -174,7 +174,7 @@
                     - displayTimecard(timecard: Timecard): Hiển thị thẻ chấm công.
                     - confirmUpdate(): Xác nhận thẻ chấm công đã được cập nhật.
 
-        3. **Controller (PayrollController)**
+        3. **Control (PayrollController)**
             - **EmployeeController:** Điều khiển việc chọn phương thức thanh toán của nhân viên và cập nhật thông tin vào Model.
                 + Phương thức:
                     - displayPaymentOptions(): Lấy danh sách phương thức thanh toán từ Model và hiển thị qua EmployeeView.
