@@ -57,7 +57,7 @@ Hệ thống con và hành vi chính:
     + Employee: Đại diện dữ liệu nhân viên (lương cơ bản, thông tin cá nhân).
     + PayrollDatabase: Lưu kết quả tính toán lương.
 
-**c) Database Subsystem**
+**e) Database Subsystem**
 - Thành phần: CentralDatabase:
     + CentralDatabase: Lưu trữ toàn bộ dữ liệu liên quan (tài khoản, chấm công, lương).
 
